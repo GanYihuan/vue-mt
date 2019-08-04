@@ -28,6 +28,19 @@ module.exports = {
     '@/plugins/element-ui'
   ],
   /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/axios'
+  ],
+  /*
+  ** Axios module configuration
+  */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+  /*
   ** Customize the progress-bar color
   */
   loading: { color: '#3B8070' },
