@@ -35,10 +35,10 @@ router.post('/addPerson', async(ctx, next) => {
 
 // Query data
 router.post('/getPerson', async(ctx, next) => {
-  const result = await Person.findOne({ // findOne: Find a piece
+  const result = await Person.findOne({ // findOne: 查询数据   找出一条
     name: ctx.request.body.name
   })
-  const results = await Person.find({ // find: Find out all
+  const results = await Person.find({ // find: 找出所有
     name: ctx.request.body.name
   })
   ctx.body = {
@@ -51,10 +51,10 @@ router.post('/getPerson', async(ctx, next) => {
 // change the data
 router.post('/updatePerson', async function(ctx) {
   const result = await Person
-    .where({ // where: Positioning data
+    .where({ // where: 定位数据
       name: ctx.request.body.name
     })
-    .update({ // update: change the data
+    .update({ // update: 修改数据
       age: ctx.request.body.age
     })
   ctx.body = {

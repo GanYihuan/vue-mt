@@ -83,7 +83,11 @@ router.get('/province/:id', async ctx => { // Get the corresponding province cit
   ctx.body = {
     code: 0,
     city: result.value.map(item => {
-      return { province: item.province, id: item.id, name: item.name }
+      return {
+        province: item.province,
+        id: item.id,
+        name: item.name
+      }
     })
   }
   // const {
@@ -128,7 +132,7 @@ router.get('/city', async ctx => {
   // }
 })
 
-// [postman](http://localhost:3000/geo/city)
+// [postman](http://localhost:3000/geo/hotCity)
 router.get('/hotCity', async ctx => {
   const result = await City.find() // bug! Did not return the full city name
   ctx.body = {

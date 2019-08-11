@@ -1,18 +1,18 @@
 ﻿import Router from 'koa-router'
 import Order from '../dbs/models/order'
 import Cart from '../dbs/models/cart'
-// 加密
-import md5 from 'crypto-js/md5'
+import md5 from 'crypto-js/md5' // 加密
 
-const router = new Router({ prefix: '/order' })
+const router = new Router({
+  prefix: '/order'
+})
 
 // 创建购物车分类栏
 router.post('/createOrder', async(ctx) => {
   const { id, price, count } = ctx.request.body
   const time = Date()
   const orderID = md5(Math.random() * 1000 + time).toString()
-  // isAuthenticated 是否登录
-  if (!ctx.isAuthenticated()) {
+  if (!ctx.isAuthenticated()) { // isAuthenticated 是否登录
     ctx.body = {
       code: -1,
       msg: '请先登录!'
@@ -52,8 +52,7 @@ router.post('/createOrder', async(ctx) => {
 
 // 获取购物车分类栏
 router.post('/getOrders', async ctx => {
-  // isAuthenticated 是否登录
-  if (!ctx.isAuthenticated()) {
+  if (!ctx.isAuthenticated()) { // isAuthenticated 是否登录
     ctx.body = {
       code: -1,
       list: [],
@@ -61,8 +60,7 @@ router.post('/getOrders', async ctx => {
     }
   } else {
     try {
-      // find 查询所有
-      const result = await Order.find()
+      const result = await Order.find() // find 查询所有
       if (result) {
         ctx.body = {
           code: 0,

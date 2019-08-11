@@ -1,12 +1,13 @@
 import Koa from 'koa'
-import mongoose from 'mongoose'
-import consola from 'consola' // Elegant Console Logger for Node.js and Browser
 import bodyParser from 'koa-bodyparser' // Parsing the middleware of the body, this.body can get the data directly in koa. Post parameter acquisition
 import session from 'koa-generic-session' // supports Delay session getter
 import Redis from 'koa-redis' // Redis storage for koa session middleware/cache.
 import json from 'koa-json' // JSON pretty-printed response middleware.
+import mongoose from 'mongoose'
+import consola from 'consola' // Elegant Console Logger for Node.js and Browser
 
 import dbConfig from './dbs/config'
+
 import passport from './interface/utils/passport'
 import users from './interface/users'
 import geo from './interface/geo'
@@ -20,7 +21,7 @@ const app = new Koa()
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
 
-// session
+// koa-generic-session
 app.keys = ['mt', 'keyskeys']
 app.proxy = true
 app.use(
@@ -33,15 +34,17 @@ app.use(
 // open koa-passport Support for session
 app.use(passport.initialize())
 app.use(passport.session())
-
+// koa-bodyparser
 app.use( // post handle
   bodyParser({
     extendTypes: ['json', 'form', 'text']
   })
 )
 
+// koa-json
 app.use(json()) // data pretty
 
+// mongoose
 mongoose.connect( // Connect database
   dbConfig.dbs,
   {
@@ -80,6 +83,7 @@ async function start() {
   app.listen(port, host)
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
+    // message: `Server listening on http://localhost:8044`,
     badge: true
   })
 }
