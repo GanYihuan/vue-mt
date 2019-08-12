@@ -1,6 +1,16 @@
-﻿import Router from 'koa-router'
+﻿/*
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-04 03:35:31
+ */
+import Router from 'koa-router'
+
 // import Config from '../dbs/config'
 // import axios from './utils/axios'
+
 import Province from '../dbs/models/province'
 import Menu from '../dbs/models/menu'
 import City from '../dbs/models/city'

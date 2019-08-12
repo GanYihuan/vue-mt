@@ -1,13 +1,22 @@
+/*
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-12 11:41:13
+ */
 import Router from 'koa-router'
-import Redis from 'koa-redis' // Redis storage for koa session middleware/cache
+import Redis from 'koa-redis' // works with koa-generic-session (a generic session middleware for koa)
 import nodeMailer from 'nodemailer' // Send e-mails from Node.js – easy as cake
 
-import User from '../dbs/models/users'
+import axios from './utils/axios'
 import Passport from './utils/passport'
-import Email from '../dbs/config'
-import axios from './utils/axios' // Promise based HTTP client for the browser and node.js
 
-const router = new Router({ // Routing prefix
+import User from '../dbs/models/users'
+import Email from '../dbs/config'
+
+const router = new Router({ // Direct access to the ioredis client object
   prefix: '/users'
 })
 const Store = new Redis().client // get redis client
