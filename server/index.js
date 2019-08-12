@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-08-04 03:35:31
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-12 11:30:03
+ * @LastEditTime: 2019-08-12 20:21:47
  */
 import Koa from 'koa'
 import bodyParser from 'koa-bodyparser' // A body parser for koa
@@ -15,8 +15,8 @@ import consola from 'consola' // Elegant Console Logger for Node.js and Browser
 import mongoose from 'mongoose' // Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment
 
 import dbConfig from './dbs/config'
-
 import passport from './interface/utils/passport'
+
 import users from './interface/users'
 import geo from './interface/geo'
 import search from './interface/search'
