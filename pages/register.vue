@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-13 16:45:12
+ -->
 <template>
   <div class="page-register">
     <article class="header">
@@ -159,7 +167,7 @@ export default {
       if (this.timerid) {
         return false
       }
-      this.$refs['ruleForm'].validateField('name', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
+      this.$refs['ruleForm'].validateField('name', valid => { // Verify username passed the check
         namePass = valid
       })
       if (namePass) {

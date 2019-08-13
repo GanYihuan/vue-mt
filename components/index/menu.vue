@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-13 16:08:56
+ -->
 <template>
   <div class="m-menu">
     <dl
@@ -50,8 +58,8 @@ export default {
     }
   },
   computed: {
-    curdetail() { // Current classification, After selecting an item on the left side the corresponding right side column data appears.(filter data) @return: filter data
-      // console.log(this.menu.filter((item)=>{ //  The printed result is an array, to get the content
+    curdetail() {
+      // console.log(this.menu.filter((item)=>{ // result is an array, to get the content
       //   return item.type === this.kind
       // })[0])
       return this.$store.state.home.menu.filter(item => {

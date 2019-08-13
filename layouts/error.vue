@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 10:24:30
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-13 03:12:03
+ -->
 <template>
   <section class="container">
     <img
@@ -17,6 +25,7 @@
     </nuxt-link>
   </section>
 </template>
+
 <script>
 export default {
   props: {

@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-04 03:35:31
+ -->
+<template>
   <el-row class="page-product">
     <el-col :span="19">
       <crumbs :keyword="keyword"/>

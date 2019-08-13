@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-13 16:40:17
+ -->
 <template>
   <div class="page-login">
     <div class="login-header">
@@ -47,6 +55,7 @@
 
 <script>
 import CryptoJS from 'crypto-js' // encryption
+
 export default {
   data: () => {
     return {

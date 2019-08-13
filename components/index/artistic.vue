@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-13 16:26:17
+ -->
 <template>
   <section class="m-istyle">
     <dl @mouseover="over">
@@ -60,8 +68,7 @@ export default {
       list: {
         all: [
           // {
-          //   img:
-          // 		'//p0.meituan.net/hotel/01b1941a2e0bf25aed72f69b39e2298c362774.png@368w_208h_1e_1c',
+          //   img: '//p0.meituan.net/hotel/01b1941a2e0bf25aed72f69b39e2298c362774.png@368w_208h_1e_1c',
           //   title: '东方之家酒店',
           //   pos: '酒店套餐',
           //   price: 398
@@ -104,10 +111,9 @@ export default {
   },
   methods: {
     over: async function(e) {
-      const dom = e.target // Current element
-      const tag = dom.tagName.toLowerCase()
+      const tag = e.target.tagName.toLowerCase()
       if (tag === 'dd') {
-        this.kind = dom.getAttribute('kind')
+        this.kind = e.target.getAttribute('kind')
         // Online data
         // const keyword = dom.getAttribute('keyword')
         // const { status, data: { count, pois }} = await this.$axios.get('/search/resultsByKeywords', {
@@ -141,7 +147,7 @@ export default {
                 url: '//abc.com'
               }
             })
-          this.list[this.kind] = r.slice(0, 9) // add data
+          this.list[this.kind] = r.slice(0, 9)
           this.list['all'] = all.slice(0, 9)
         } else {
           this.list[this.kind] = []
