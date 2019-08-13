@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-08-04 03:35:31
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-13 16:39:46
+ * @LastEditTime: 2019-08-13 17:02:21
  -->
 <template>
   <div class="page-detail">
@@ -57,6 +57,7 @@
 import Crumbs from '@/components/detail/crumbs.vue'
 import Summa from '@/components/detail/summary.vue'
 import List from '@/components/detail/list.vue'
+
 export default {
   components: {
     Crumbs,
@@ -74,7 +75,6 @@ export default {
         city: ctx.store.state.geo.position.city
       }
     })
-    // console.log(login, product, list)
     if (status === 200) {
       return {
         keyword,

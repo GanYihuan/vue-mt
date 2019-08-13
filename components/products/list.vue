@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-08-04 03:35:31
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-13 16:59:17
+ -->
+<template>
   <div class="m-products-list">
     <!-- Intelligent sorting -->
     <dl>
@@ -21,6 +29,7 @@
 
 <script>
 import Item from './product.vue'
+
 export default {
   components: {
     Item

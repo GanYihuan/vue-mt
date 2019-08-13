@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-08-04 03:35:31
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-13 16:39:13
+ * @LastEditTime: 2019-08-13 17:12:06
  -->
 <template>
   <div class="page-cart">
@@ -70,8 +70,7 @@ export default {
       }
     }
   },
-  // Get data, nuxt life cycle
-  async asyncData(ctx) {
+  async asyncData(ctx) { // Get data, nuxt life cycle
     const { status, data: { code, data: { name, price }}} = await ctx.$axios.post('/cart/getCart', {
       id: ctx.query.id
     })

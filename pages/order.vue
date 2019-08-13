@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-08-04 03:35:31
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-13 16:39:55
+ * @LastEditTime: 2019-08-13 17:03:08
  -->
 <template>
   <div class="page-order">
@@ -65,6 +65,7 @@
 
 <script>
 import List from '@/components/order/list.vue'
+
 export default {
   components: {
     List
